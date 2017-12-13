@@ -8,14 +8,20 @@ class App extends Component {
     console.log(params);
   }
 
+  onSubmit() {
+    console.log('Trigger onSubmit from App');
+  }
+
+  onCancel() {
+    console.log('Trigger onCancel from App');
+  }
+
   render() {
     let myFields = {
       title: 'Login',
       fields: [
         { label: 'Email', name: 'email', type: 'text', value: 'dan@gmail.com', placeholder: 'Insert an email'},
-        { label: 'Password', name: 'password', type: 'password', value: 'pass', placeholder: 'Insert a password' }
-      /*  { label: 'Email', name: 'email', type: 'text', value: 'val', placeholder: 'Insert an e-mail', validations: [] },
-        { label: 'Password', name: 'password', type: 'password', value: 'password', placeholder: 'Insert a password' },
+        { label: 'Password', name: 'password', type: 'password', value: 'pass', placeholder: 'Insert a password' },
         { label: 'Comments', name: 'comments', type: 'textarea', value: 'val', placeholder: 'Add a comment' },
         { label: 'Select', name: 'select', type: 'select', value: ['Volvo', 'Saab', 'Opel', 'Audi', 'Bmw', 'Mercedes'] },
         {
@@ -29,7 +35,11 @@ class App extends Component {
             { id: 'male', value: 'male', label: 'Male', selected: true },
             { id: 'female', value: 'female', label: 'Female' },
             { id: 'other', value: 'other', label: 'Other' }], validations: []
-        } */
+        }
+      ],
+      buttons: [
+        { id: 'submit', label: 'Submit', onClick: this.onSubmit },
+        { id: 'cancel', label: 'Cancel', onClick: this.onCancel },
       ],
 
       onSubmit: this.customHandleSubmit

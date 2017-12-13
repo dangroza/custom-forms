@@ -14,7 +14,7 @@ class GenericForm extends Component {
     this.onSubmit = this.onSubmit.bind(this);
     let childrenObj = {};
     this.props.fields.forEach(function (el, i) {
-      let obj = { ...el, key: el.name }; // TODO: improve this key to make sure it is unique - prevent from allowing duplicate keys in hash
+      let obj = { ...el, key: el.name };
       childrenObj[el.name]= obj;
     });
     this.state ={
