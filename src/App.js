@@ -26,14 +26,14 @@ class App extends Component {
         { label: 'Select', name: 'select', type: 'select', value: ['Volvo', 'Saab', 'Opel', 'Audi', 'Bmw', 'Mercedes'] },
         {
           label: 'Gender', name: 'gender', type: 'radio', value: [
-            { id: 'male', value: 'male', label: 'Male', selected: true },
-            { id: 'female', value: 'female', label: 'Female' },
+            { id: 'maleGender', value: 'male', label: 'Male', selected: true },
+            { id: 'femaleGender', value: 'female', label: 'Female' },
             { id: 'otherGender', value: 'other', label: 'Other' }], validations: []
         },
         {
           label: 'Make', name: 'make', type: 'checkbox', value: [
-            { id: 'male', value: 'male', label: 'Male', selected: true },
-            { id: 'female', value: 'female', label: 'Female' },
+            { id: 'maleMake', value: 'male', label: 'Male', selected: true },
+            { id: 'femaleMake', value: 'female', label: 'Female' },
             { id: 'otherMake', value: 'other', label: 'Other' }], validations: []
         }
       ],

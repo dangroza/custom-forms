@@ -7,9 +7,7 @@ class CustomButton extends Component {
 
 
     return(
-      <div className="buttons">
-        <button>{this.props.onClick}</button>
-      </div>
+        <button {...this.props}>{this.props.id}</button>
     );
   }
 }

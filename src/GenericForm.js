@@ -34,8 +34,15 @@ class GenericForm extends Component {
     let childNodes = [];
     let fields = this.state.fields;
 
-    let childButton = [];
-    let buttons = this.state.buttons;
+    let childButtons = [];
+    let buttons = this.props.buttons;
+
+    for (let id in buttons) {
+      if (buttons.hasOwnProperty(id)) {
+        let el = buttons[id];
+      childButtons.push(<CustomButton {...el} />)
+      }
+    }
 
     for (var key in fields) {
       if (fields.hasOwnProperty(key)) {
@@ -64,20 +71,13 @@ class GenericForm extends Component {
 
         }
       }
-      for (var id in buttons) {
-        if (buttons.hasOwnProperty(id)) {
-          let el = buttons[id];
-        childButton.push(<CustomButton {...el} onClick={this.props.onClick} />)
-        }
-      }
     }
-
     return (
       <div className="form-container">
         <form onSubmit={this.onSubmit}>
           <h2 className="form-title">{this.props.title}</h2>
           {childNodes}
-          {CustomButton}
+          {childButtons}
           <button className="submit-button">Submit</button>
         </form>
       </div>
