@@ -28,13 +28,13 @@ class App extends Component {
           label: 'Gender', name: 'gender', type: 'radio', value: [
             { id: 'male', value: 'male', label: 'Male', selected: true },
             { id: 'female', value: 'female', label: 'Female' },
-            { id: 'other', value: 'other', label: 'Other' }], validations: []
+            { id: 'otherGender', value: 'other', label: 'Other' }], validations: []
         },
         {
           label: 'Make', name: 'make', type: 'checkbox', value: [
             { id: 'male', value: 'male', label: 'Male', selected: true },
             { id: 'female', value: 'female', label: 'Female' },
-            { id: 'other', value: 'other', label: 'Other' }], validations: []
+            { id: 'otherMake', value: 'other', label: 'Other' }], validations: []
         }
       ],
       buttons: [

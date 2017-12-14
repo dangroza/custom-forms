@@ -6,6 +6,7 @@ import CustomRadio from './CustomRadio.js';
 import CustomCheckbox from './CustomCheckbox.js';
 import CustomSelect from './CustomSelect.js';
 import CustomPassword from './CustomPassword.js';
+import CustomButton from './CustomButton';
 
 class GenericForm extends Component {
   constructor(props) {
@@ -33,6 +34,9 @@ class GenericForm extends Component {
     let childNodes = [];
     let fields = this.state.fields;
 
+    let childButton = [];
+    let buttons = this.state.buttons;
+
     for (var key in fields) {
       if (fields.hasOwnProperty(key)) {
         let el = fields[key];
@@ -57,6 +61,13 @@ class GenericForm extends Component {
             break;
           default:
             childNodes.push(<CustomInput {...el} onChange={this.handleFieldChange} />)
+
+        }
+      }
+      for (var id in buttons) {
+        if (buttons.hasOwnProperty(id)) {
+          let el = buttons[id];
+        childButton.push(<CustomButton {...el} onClick={this.props.onClick} />)
         }
       }
     }
@@ -66,6 +77,7 @@ class GenericForm extends Component {
         <form onSubmit={this.onSubmit}>
           <h2 className="form-title">{this.props.title}</h2>
           {childNodes}
+          {CustomButton}
           <button className="submit-button">Submit</button>
         </form>
       </div>
