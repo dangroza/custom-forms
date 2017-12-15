@@ -8,6 +8,14 @@ class App extends Component {
     console.log(params);
   }
 
+  onSubmit() {
+    console.log('Trigger onSubmit from App');
+  }
+
+  onCancel() {
+    console.log('Trigger onCancel from App');
+  }
+
   render() {
     let myFields = {
       title: 'Login',
@@ -37,9 +45,12 @@ class App extends Component {
             { id: 'male', value: 'male', label: 'Male', selected: true },
             { id: 'female', value: 'female', label: 'Female' },
             { id: 'other', value: 'other', label: 'Other' }], validations: []
-        } */
+        }*/
       ],
-
+      buttons: [
+        { id: 'submit', label: 'Submit', onClick: this.onSubmit },
+        { id: 'cancel', label: 'Cancel', onClick: this.onCancel },
+      ],
       onSubmit: this.customHandleSubmit
     }
     return (
