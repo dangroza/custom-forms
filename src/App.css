@@ -80,6 +80,16 @@ select {
   margin-bottom: 15px;
 }
 
+.tag-element {
+  margin: 0 2px;
+  display: inline-block;
+  width:50px;
+  border: 1px solid #222222;
+}
+
+.selected-tag {
+  background-color: burlywood;
+}
 
 
 

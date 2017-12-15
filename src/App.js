@@ -13,7 +13,15 @@ class App extends Component {
       title: 'Login',
       fields: [
         { label: 'Email', name: 'email', type: 'text', value: 'dan@gmail.com', placeholder: 'Insert an email'},
-        { label: 'Password', name: 'password', type: 'password', value: 'pass', placeholder: 'Insert a password' }
+        { label: 'Password', name: 'password', type: 'password', value: 'pass', placeholder: 'Insert a password' },
+        {
+            label: 'Tags', name: 'tags', type: 'tags', value: [
+                {selected:false, name:'tag1'},
+                {selected:false, name:'tag2'},
+                {selected:false, name:'tag3'},
+                {selected:false, name:'tag4'},
+            ]
+        }
       /*  { label: 'Email', name: 'email', type: 'text', value: 'val', placeholder: 'Insert an e-mail', validations: [] },
         { label: 'Password', name: 'password', type: 'password', value: 'password', placeholder: 'Insert a password' },
         { label: 'Comments', name: 'comments', type: 'textarea', value: 'val', placeholder: 'Add a comment' },

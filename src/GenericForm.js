@@ -6,6 +6,7 @@ import CustomRadio from './CustomRadio.js';
 import CustomCheckbox from './CustomCheckbox.js';
 import CustomSelect from './CustomSelect.js';
 import CustomPassword from './CustomPassword.js';
+import CustomTagsContainer from "./CustomTagsContainer";
 
 class GenericForm extends Component {
   constructor(props) {
@@ -54,6 +55,9 @@ class GenericForm extends Component {
             break;
           case "select":
             childNodes.push(<CustomSelect {...el} onChange={this.handleFieldChange} />)
+            break;
+          case "tags":
+            childNodes.push(<CustomTagsContainer {...el} onChange={this.handleFieldChange} />)
             break;
           default:
             childNodes.push(<CustomInput {...el} onChange={this.handleFieldChange} />)

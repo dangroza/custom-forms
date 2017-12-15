@@ -13,7 +13,7 @@ class CustomSelect extends Component {
 
       let obj = {
         value: value[i], key: i
-      }
+      };
 
       let node = (<option key={obj.key} value={obj.value}>{obj.value}</option>);
       selectNodes.push(node);
