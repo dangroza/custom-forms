@@ -23,12 +23,16 @@ body {
 }
 
 @keyframes logo-image-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .form-title {
-  color:lightblue;
+  color: lightblue;
 }
 
 .form-container {
@@ -83,7 +87,7 @@ select {
 .tag-element {
   margin: 0 2px;
   display: inline-block;
-  width:50px;
+  width: 50px;
   border: 1px solid #222222;
 }
 

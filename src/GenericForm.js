@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './App.css';
 import CustomInput from './CustomInput.js';
 import CustomTextarea from './CustomTextarea.js';
@@ -15,24 +15,24 @@ class GenericForm extends Component {
     this.onSubmit = this.onSubmit.bind(this);
     let childrenObj = {};
     this.props.fields.forEach(function (el, i) {
-      let obj = { ...el, key: el.name };
-      childrenObj[el.name]= obj;
+      let obj = {...el, key: el.name};
+      childrenObj[el.name] = obj;
     });
-    this.state ={
+    this.state = {
       isValid: false,
       isComplete: false,
       fields: childrenObj
     };
   }
 
-  updateFileds(fields,filedName,fieldValue) {
+  updateFileds(fields, filedName, fieldValue) {
     switch (filedName) {
-        case "tags":
-          fields.tags.value.forEach(function(tag){
-            if(tag.name === fieldValue.name)
-              tag.selected = !tag.selected;
-          });
-          return fields;
+      case "tags":
+        fields.tags.value.forEach(function (tag) {
+          if (tag.name === fieldValue.name)
+            tag.selected = !tag.selected;
+        });
+        return fields;
       default:
         fields[filedName].value = fieldValue;
         return fields;
@@ -41,8 +41,8 @@ class GenericForm extends Component {
   }
 
   handleFieldChange(field, value) {
-    let updatedFields = this.updateFileds(this.state.fields,field,value);
-    this.setState({ fields: updatedFields });
+    let updatedFields = this.updateFileds(this.state.fields, field, value);
+    this.setState({fields: updatedFields});
   }
 
   render() {
@@ -55,28 +55,28 @@ class GenericForm extends Component {
         el.id = key;
         switch (el.type) {
           case "text":
-            childNodes.push(<CustomInput {...el} onChange={this.handleFieldChange} />)
+            childNodes.push(<CustomInput {...el} onChange={this.handleFieldChange}/>)
             break;
           case "password":
-            childNodes.push(<CustomPassword {...el} onChange={this.handleFieldChange} />)
+            childNodes.push(<CustomPassword {...el} onChange={this.handleFieldChange}/>)
             break;
           case "textarea":
-            childNodes.push(<CustomTextarea {...el} onChange={this.handleFieldChange} />)
+            childNodes.push(<CustomTextarea {...el} onChange={this.handleFieldChange}/>)
             break;
           case "radio":
-            childNodes.push(<CustomRadio {...el} onChange={this.handleFieldChange} />)
+            childNodes.push(<CustomRadio {...el} onChange={this.handleFieldChange}/>)
             break;
           case "checkbox":
-            childNodes.push(<CustomCheckbox {...el} onChange={this.handleFieldChange} />)
+            childNodes.push(<CustomCheckbox {...el} onChange={this.handleFieldChange}/>)
             break;
           case "select":
-            childNodes.push(<CustomSelect {...el} onChange={this.handleFieldChange} />)
+            childNodes.push(<CustomSelect {...el} onChange={this.handleFieldChange}/>)
             break;
           case "tags":
-            childNodes.push(<CustomTagsContainer {...el} onChange={this.handleFieldChange} />)
+            childNodes.push(<CustomTagsContainer {...el} onChange={this.handleFieldChange}/>)
             break;
           default:
-            childNodes.push(<CustomInput {...el} onChange={this.handleFieldChange} />)
+            childNodes.push(<CustomInput {...el} onChange={this.handleFieldChange}/>)
         }
       }
     }
@@ -91,9 +91,10 @@ class GenericForm extends Component {
       </div>
     );
   }
+
   onSubmit() {
-      console.log(this.state.fields);
-      this.props.onSubmit(this.state.fields);
+    console.log(this.state.fields);
+    this.props.onSubmit(this.state.fields);
   }
 }
 
