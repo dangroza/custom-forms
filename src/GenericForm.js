@@ -24,12 +24,27 @@ class GenericForm extends Component {
       fields: childrenObj
     };
   }
+
+  updateFileds(fields,filedName,fieldValue) {
+    switch (filedName) {
+        case "tags":
+          fields.tags.value.forEach(function(tag){
+            if(tag.name === fieldValue.name)
+              tag.selected = !tag.selected;
+          });
+          return fields;
+      default:
+        fields[filedName].value = fieldValue;
+        return fields;
+    }
+
+  }
+
   handleFieldChange(field, value) {
-    console.log("We are updating '"+ field + "' with: '"+ value);
-    let updatedFields = this.state.fields;
-    updatedFields[field].value = value;
+    let updatedFields = this.updateFileds(this.state.fields,field,value);
     this.setState({ fields: updatedFields });
   }
+
   render() {
     let childNodes = [];
     let fields = this.state.fields;
@@ -37,6 +52,7 @@ class GenericForm extends Component {
     for (var key in fields) {
       if (fields.hasOwnProperty(key)) {
         let el = fields[key];
+        el.id = key;
         switch (el.type) {
           case "text":
             childNodes.push(<CustomInput {...el} onChange={this.handleFieldChange} />)

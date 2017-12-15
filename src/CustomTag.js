@@ -4,23 +4,20 @@ import './App.css';
 class CustomTag extends Component {
     constructor(props) {
         super(props);
-        this.toggleSelectedTag = this.handleChange.bind(this);
-        this.state = {isSelected: false};
+        this.handleChange = this.handleChange.bind(this);
     }
 
 
-    handleChange(e) {
-        this.setState(prevState => ({
-        isSelected: !prevState.isSelected
-        }));
+    handleChange() {
+        this.props.onChange(this.props.tagId,this.props.value);
     }
 
     render() {
-        const isSelected = this.state.isSelected;
         let tag = this.props.value;
+        let isSelected = this.props.value.selected;
 
         return (
-            <span className={ "tag-element" + (isSelected? ' selected-tag' : '')} onClick={this.toggleSelectedTag}>
+            <span className={ "tag-element" + (isSelected? ' selected-tag' : '')} onClick={this.handleChange}>
                 {tag.name}
             </span>
         );
