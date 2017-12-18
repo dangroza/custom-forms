@@ -38,8 +38,8 @@ class App extends Component {
         }
       ],
       buttons: [
-        { id: 'submit', label: 'Submit', onClick: this.onSubmit, disabled: '' },
-        { id: 'cancel', label: 'Cancel', onClick: this.onCancel, disabled: '' },
+        { id: 'submit', label: 'Submit', onClick: this.onSubmit, disabled: true },
+        { id: 'cancel', label: 'Cancel', onClick: this.onCancel, disabled: true },
       ],
 
       onSubmit: this.customHandleSubmit
