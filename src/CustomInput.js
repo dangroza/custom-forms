@@ -8,7 +8,7 @@ class CustomInput extends Component {
   }
   onChange(event){
     let field = event.target;
-    this.props.onChange(field.name,field.value);
+    this.props.onChange(field.name, field.value);
   }
 
   render() {
@@ -16,10 +16,8 @@ class CustomInput extends Component {
     return (
       <div className="form-inputs">
         <label className="label-section" htmlFor={this.props.id}>{labelText}</label>
-        <input
-          {...this.props}
-          onChange={this.onChange} //TODO: if this is radio or select you must handle parent onChange
-          
+        <input {...this.props} onChange={this.props.onChange} //TODO: if this is radio or select you must handle parent onChange
+
           />
       </div>
     );
