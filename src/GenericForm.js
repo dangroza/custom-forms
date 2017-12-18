@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import CustomInput from './CustomInput.js';
 import CustomTextarea from './CustomTextarea.js';
@@ -25,16 +25,29 @@ class GenericForm extends Component {
     };
   }
 
-  updateFileds(fields, filedName, fieldValue) {
-    switch (filedName) {
+  updateFileds(fields, fieldModified, fieldValue) {
+    const fieldName = fieldModified.name;
+    switch (fieldModified.type) {
       case "tags":
-        fields.tags.value.forEach(function (tag) {
-          if (tag.name === fieldValue.name)
-            tag.selected = !tag.selected;
+      case "checkbox":
+        fields[fieldName].value.forEach(function (value) {
+          if (value.name === fieldValue || value.id === fieldValue) {
+            value.selected = !value.selected;
+          }
+        });
+        return fields;
+      case "radio":
+      case "select":
+        fields[fieldName].value.forEach(function (value) {
+          if (value.id === fieldValue)
+            value.selected = true;
+          else if (value.selected) {
+            delete value.selected;
+          }
         });
         return fields;
       default:
-        fields[filedName].value = fieldValue;
+        fields[fieldName].value = fieldValue;
         return fields;
     }
 

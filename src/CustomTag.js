@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './App.css';
 
 class CustomTag extends Component {
@@ -9,7 +9,7 @@ class CustomTag extends Component {
 
 
   handleChange() {
-    this.props.onChange(this.props.tagId, this.props.value);
+    this.props.onChange({'type': 'tags', 'name': this.props.tagId}, this.props.value.name);
   }
 
   render() {
@@ -17,9 +17,8 @@ class CustomTag extends Component {
     let isSelected = this.props.value.selected;
 
     return (
-      <span className={"tag-element no-select" + (isSelected ? ' selected-tag' : '')} onClick={this.handleChange}>
-                {tag.name}
-            </span>
+      <span className={"tag-element no-select" + (isSelected ? ' selected-tag' : '')}
+            onClick={this.handleChange}>{tag.name}</span>
     );
   }
 }

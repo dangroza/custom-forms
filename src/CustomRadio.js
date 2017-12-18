@@ -16,9 +16,9 @@ class CustomRadio extends Component {
         type: this.props.type,
         name: this.props.name,
         value: this.props.value
-      }
+      };
 
-      let node = <CustomInput {...obj} />
+      let node = <CustomInput onChange={this.props.onChange} {...obj} />
       valueNodes.push(node);
     }
 
