@@ -12,13 +12,13 @@ class CustomCheckbox extends Component {
       let el = value[i];
 
       let obj = {
-        ...el, key: i,
+        ...el, key: i, checked: el.selected,
         type: this.props.type,
         name: this.props.name,
-        value: this.props.value
-      }
+        value: this.props.value,
+      };
 
-      let node = <CustomInput {...obj} />
+      let node = <CustomInput onChange={this.props.onChange} {...obj} />
       valueNodes.push(node);
     }
 

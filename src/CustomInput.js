@@ -6,21 +6,26 @@ class CustomInput extends Component {
     super(props);
     this.onChange = this.onChange.bind(this);
   }
-  onChange(event){
+
+  onChange(event) {
     let field = event.target;
-    this.props.onChange(field.name,field.value);
+    let value = field.value;
+    if (field.type === "checkbox" || field.type === "radio") {
+      value = field.id;
+    }
+    this.props.onChange({'type': field.type, 'name': field.name}, value);
   }
 
   render() {
-    let labelText = this.props.label
+    let labelText = this.props.label;
     return (
       <div className="form-inputs">
         <label className="label-section" htmlFor={this.props.id}>{labelText}</label>
         <input
           {...this.props}
           onChange={this.onChange} //TODO: if this is radio or select you must handle parent onChange
-          
-          />
+
+        />
       </div>
     );
   }
