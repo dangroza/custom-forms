@@ -17,7 +17,7 @@ class CustomTag extends Component {
     let isSelected = this.props.value.selected;
 
     return (
-      <span className={"tag-element" + (isSelected ? ' selected-tag' : '')} onClick={this.handleChange}>
+      <span className={"tag-element no-select" + (isSelected ? ' selected-tag' : '')} onClick={this.handleChange}>
                 {tag.name}
             </span>
     );
