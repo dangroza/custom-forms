@@ -23,12 +23,16 @@ body {
 }
 
 @keyframes logo-image-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .form-title {
-  color:lightblue;
+  color: lightblue;
 }
 
 .form-container {
@@ -79,3 +83,34 @@ select {
 .form-inputs {
   margin-bottom: 15px;
 }
+
+.tag-element {
+  margin: 0 2px;
+  display: inline-block;
+  width: 50px;
+  border: 1px solid #222222;
+  border-radius: 7px;
+}
+
+.selected-tag {
+  background-color: burlywood;
+}
+
+.no-select {
+  cursor: pointer;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+
+
+
+
+
+
+
+

@@ -6,7 +6,7 @@ class CustomPassword extends Component {
     return (
       <div className="form-inputs">
         <label htmlFor={this.props.id}>{this.props.label}</label>
-        <input type={this.props.type} placeholder={this.props.placeholder} />
+        <input type={this.props.type} placeholder={this.props.placeholder}/>
       </div>
     );
   }
