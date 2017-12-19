@@ -24,11 +24,11 @@ class App extends Component {
         {label: 'Password', name: 'password', type: 'password', value: 'pass', placeholder: 'Insert a password'},
         {
           label: 'Tags', name: 'tags', type: 'tags', value: [
-            {selected: false, name: 'tag1'},
-            {selected: true, name: 'tag2'},
-            {selected: false, name: 'tag3'},
-            {selected: false, name: 'tag4'},
-          ]
+          {selected: false, name: 'tag1'},
+          {selected: true, name: 'tag2'},
+          {selected: false, name: 'tag3'},
+          {selected: false, name: 'tag4'},
+        ]
         },
         {label: 'Email', name: 'email', type: 'text', value: 'val', placeholder: 'Insert an e-mail', validations: []},
         {label: 'Password', name: 'password', type: 'password', value: 'password', placeholder: 'Insert a password'},
@@ -44,15 +44,15 @@ class App extends Component {
         },
         {
           label: 'Gender', name: 'gender', type: 'radio', value: [
-            {id: 'male', value: 'male', label: 'Male', selected: true},
-            {id: 'female', value: 'female', label: 'Female'},
-            {id: 'other', value: 'other', label: 'Other'}], validations: []
+          {id: 'male', value: 'male', label: 'Male', selected: true},
+          {id: 'female', value: 'female', label: 'Female'},
+          {id: 'other', value: 'other', label: 'Other'}], validations: []
         },
         {
           label: 'Make', name: 'make', type: 'checkbox', value: [
-            {id: 'male', value: 'male', label: 'Male', selected: true},
-            {id: 'female', value: 'female', label: 'Female'},
-            {id: 'other', value: 'other', label: 'Other'}], validations: []
+          {id: 'male', value: 'male', label: 'Male', selected: true},
+          {id: 'female', value: 'female', label: 'Female'},
+          {id: 'other', value: 'other', label: 'Other'}], validations: []
         }
       ],
       buttons: [
@@ -61,6 +61,7 @@ class App extends Component {
       ],
       onSubmit: this.customHandleSubmit
     };
+
     return (
       <div className="main-app">
         <GenericForm {...myFields} />
