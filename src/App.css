@@ -2,10 +2,6 @@ body {
   font-family: Roboto;
 }
 
-.main-app {
-  text-align: center;
-}
-
 .logo-image {
   animation: logo-image-spin infinite 20s linear;
   height: 80px;
@@ -106,11 +102,22 @@ select {
   -ms-user-select: none;
 }
 
+.btn {
+  font-size: 15px;
+  padding: 5px 15px;
+  border: 1px solid #DDD;
+  margin: 0 5px;
+}
+
+.richtext {
+  width: 400px;
+  border-radius: 10px;
+}
 
 
-
-
-
+.error {
+  color: #D0021B;
+}
 
 
 

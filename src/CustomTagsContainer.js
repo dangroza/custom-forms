@@ -11,7 +11,6 @@ class CustomTagsContainer extends Component {
       let node = (<CustomTag onChange={this.props.onChange} key={i} tagId={this.props.id} value={values[i]}/>);
       tagNodes.push(node);
     }
-
     return (
       <div className="form-group">
         {tagNodes}
