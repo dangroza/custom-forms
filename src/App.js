@@ -47,7 +47,34 @@ class App extends Component {
           label: 'Resource Type(s)',
           id: 'types',
           type: 'selectTab',
-          value: '',
+          value: ['red','blue'],
+          options: [
+          	{
+          		label: 'Primary Colors', options: [
+          			{ label: 'Yellow', value: 'yellow' },
+          			{ label: 'Red', value: 'red' },
+          			{ label: 'Blue', value: 'blue' }
+          		]
+          	},
+          	{
+          		label: 'Secondary Colors', options: [
+          			{ label: 'Orange', value: 'orange' },
+          			{
+          				label: 'Purple', options: [
+          					{ label: 'Light Purple', value: 'light_purple' },
+          					{ label: 'Medium Purple', value: 'medium_purple' },
+          					{ label: 'Dark Purple', value: 'dark_purple' }
+          				]
+          			},
+          			{ label: 'Green', value: 'green' }
+          		]
+          	},
+          	{
+          		label: 'White',
+          		value: 'white',
+          	}
+          ],
+          multi: true,
           mandatory: true,
           tabIndex: 3,
           placeholder: 'Resource Type(s)'
@@ -57,6 +84,10 @@ class App extends Component {
           label: 'Subject(s)',
           id: 'subjects',
           type: 'selectTab',
+          options: [
+            { value: 'one', label: 'One' },
+            { value: 'two', label: 'Two' },
+          ],
           value: '',
           mandatory: true,
           tabIndex: 4,
@@ -66,7 +97,7 @@ class App extends Component {
           label: 'Grade Level(s)',
           id: 'grade_levels',
           type: 'selectTab',
-          value: '',
+          options: [],
           mandatory: true,
           tabIndex: 5,
           placeholder: 'Select a grade level'
@@ -75,7 +106,7 @@ class App extends Component {
           label: 'Rating',
           id: 'rating',
           type: 'selectTab',
-          value: '',
+          options: [],
           tabIndex: 6,
           placeholder: 'Select a rating',
           tooltip: 'Replace this with rating tooltip message'
@@ -90,7 +121,7 @@ class App extends Component {
           label: 'Concept(s)',
           id: 'concepts',
           type: 'selectTab',
-          value: '',
+          options: [],
           tabIndex: 8,
           placeholder: 'Select a concept',
           tooltip: 'Replace this with concept tooltip message'
