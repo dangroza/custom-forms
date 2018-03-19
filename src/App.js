@@ -126,7 +126,20 @@ const formFields = {
       mandatory: true,
       placeholder: 'Provide an overview of the resource including tips for use and keywords.',
       tooltip: 'Replace this with description tooltip message'
+    },
+
+    {
+      label: 'Random comments',
+      id: 'comments',
+      type: 'textarea',
+      value: '',
+      tabIndex: 111,
+      mandatory: true,
+      placeholder: 'Provide some random comment...',
+      tooltip: 'Replace this with comment tooltip message'
     }
+
+
  /*
     {label: 'Email', name: 'email', type: 'text', value: 'dan@gmail.com', placeholder: 'Insert an email'},
     {label: 'Password', name: 'password', type: 'password', value: 'pass', placeholder: 'Insert a password'},
