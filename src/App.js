@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
 import CustomReactForm from 'custom-react-form';
+import CustomInput from './CustomInput';
 
 const formFields = {
-  title: 'Add a resource:',
-  subTitle: 'Required Info',
+  settings: {
+    title: 'Add a resource:',
+    subTitle: 'Required Info'
+  },
   fields: [
     {
       label: 'Resource URL',
@@ -15,6 +18,16 @@ const formFields = {
       tabIndex: 1,
       placeholder: 'Paste a resource URL',
       errors: ["Field is required"]
+    },
+    {
+      type: 'container',
+      content: '<div>Boss</div>',
+      cssClass: 'custom'
+    },
+    {
+      type: 'hoc',
+      component: CustomInput,
+      componentProps: { title: 'dan' }
     },
     {
       label: 'Title',
@@ -94,10 +107,8 @@ const formFields = {
       tooltip: 'Replace this with rating tooltip message'
     },
     {
-      id: 'concept_or_tag_message',
-      type: 'paragraph',
-      value: '* At least one <b>concept</b> or <b>aditional tag</b> is required to add a resource',
-      tabIndex: 7
+      type: 'container',
+      content: '* At least one <b>concept</b> or <b>aditional tag</b> is required to add a resource',
     },
     {
       label: 'Concept(s)',
