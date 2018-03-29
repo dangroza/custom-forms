@@ -17,7 +17,7 @@ const formFields = {
       mandatory: true,
       tabIndex: 1,
       placeholder: 'Paste a resource URL',
-      errors: ["Field is required"]
+      errors: []
     },
     {
       type: 'container',
@@ -122,8 +122,11 @@ const formFields = {
     {
       label: 'Aditional tags',
       id: 'tags',
-      type: 'taglist',
-      value: '',
+      type: 'selectTab',
+      value: ['one'],
+      options: [{ value: 'one', label: 'One' }],
+      multi: true,
+      allowNew: true,
       tabIndex: 9,
       placeholder: 'Provide additional tags',
       tooltip: 'Replace this with concept tooltip message'
