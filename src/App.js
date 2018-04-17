@@ -3,6 +3,16 @@ import './App.css';
 import CustomReactForm from 'custom-react-form';
 import CustomInput from './CustomInput';
 
+
+const customLoadOptions = () => {
+  return  fetch(`custom url`)
+      .then((response) => {
+        return response.json();
+      }).then((json) => {
+        return { options: json };
+      });
+};
+
 const formFields = {
   settings: {
     title: 'Add a resource:',
@@ -89,47 +99,8 @@ const formFields = {
       placeholder: 'Select a subject'
     },
     {
-      label: 'Grade Level(s)',
-      id: 'grade_levels',
-      type: 'selectTab',
-      options: [],
-      mandatory: true,
-      tabIndex: 5,
-      placeholder: 'Select a grade level'
-    },
-    {
-      label: 'Rating',
-      id: 'rating',
-      type: 'selectTab',
-      options: [],
-      tabIndex: 6,
-      placeholder: 'Select a rating',
-      tooltip: 'Replace this with rating tooltip message'
-    },
-    {
       type: 'container',
       content: '* At least one <b>concept</b> or <b>aditional tag</b> is required to add a resource',
-    },
-    {
-      label: 'Concept(s)',
-      id: 'concepts',
-      type: 'selectTab',
-      options: [],
-      tabIndex: 8,
-      placeholder: 'Select a concept',
-      tooltip: 'Replace this with concept tooltip message'
-    },
-    {
-      label: 'Aditional tags',
-      id: 'tags',
-      type: 'selectTab',
-      value: ['one'],
-      options: [{ value: 'one', label: 'One' }],
-      multi: true,
-      allowNew: true,
-      tabIndex: 9,
-      placeholder: 'Provide additional tags',
-      tooltip: 'Replace this with concept tooltip message'
     },
     {
       label: 'Description',
@@ -221,6 +192,12 @@ class App extends Component {
   onSave() {
     console.log('Trigger onSave from App');
     console.log(this.state.formFields);
+  }
+
+  get isValid() {
+    return !(Object.values(this.state.formFields.fields).find(el => {
+      return el.errors && el.errors.length > 0
+    }));
   }
 
   onCancel() {
